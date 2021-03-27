@@ -61,7 +61,7 @@ def main():
         CommandHandler("reddit", random_reddit_command.get_random_subreddit_meme)
     )
     dp.add_handler(CommandHandler("judge", judge_poll_command.get_judgement_poll))
-
+    dp.add_handler(CommandHandler("spongebob", spongebob.spongebob_text))
 
 
     # Text command:
