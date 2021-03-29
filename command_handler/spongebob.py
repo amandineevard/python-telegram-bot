@@ -9,6 +9,11 @@ Author : Ludovic Herbelin
 27.03.2021
 """
 
+import random
+import re
+
+# probability that the letter will be changed, to add osme variety
+CASE_PROBABILITY = 0.9
 
 def __alternate_case_text__(text):
     """
@@ -22,7 +27,12 @@ def __alternate_case_text__(text):
     updated_text = []
     for i in range(0, len(text)):
         c = text[i]
-        if i % 2 == 0:
+        rand_n = random.random()
+        # every letter at an odd position can be changed to upper at random
+        if i % 2 != 0 and rand_n > (1.0 - CASE_PROBABILITY):
+            c = c.upper()
+        # if not an odd positon we can still set it to upper sometimes
+        elif rand_n > CASE_PROBABILITY:
             c = c.upper()
         
         # add in a list so we don't concatenate every iteration
@@ -33,8 +43,20 @@ def __alternate_case_text__(text):
 
 def spongebob_text(update, context):
     try:
-        text = update.message.text
-        update.message.reply_text(__alternate_case_text__(text))
+        # get the user's full message
+        message_text = update.message.text
+
+        # check that there was some text given apart from the command
+        if ' ' not in message_text:
+            raise ValueError('No text given after command')
+
+        # remove the command from the user text (up to the first space)
+        user_input = re.sub(r'^.*? ', ' ', message_text).lstrip()
+
+        if len(user_input) == 0:
+            raise ValueError('No text given after command')
+
+        update.message.reply_text(__alternate_case_text__(user_input))
 
     except (IndexError, ValueError):
         update.message.reply_text(
@@ -46,6 +68,7 @@ def spongebob_text(update, context):
 
 
 if __name__ == '__main__':
-    text = "why are you poor ? just buy a house"
-    print(__alternate_case_text__(text))
+    text = "/spongebob why are you poor ? just buy a house"
+    user_input = re.sub(r'^.*? ', ' ', text).lstrip()
+    print(__alternate_case_text__(user_input))
     
