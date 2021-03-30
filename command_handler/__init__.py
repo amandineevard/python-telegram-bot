@@ -7,5 +7,5 @@ __all__ = [
     "ok_boomer_command",
     "random_reddit_command",
     "judge_poll_command",
-    "spongebob",
+    "spongebob_command",
 ]

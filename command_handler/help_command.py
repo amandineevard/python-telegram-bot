@@ -11,6 +11,7 @@ def help(update, context):
         "/okboomer : Je t'envoie une image du subreddit.\n"
         "/reddit mildlyinteresting : Choisis un subreddit et je t'envoie une image correspondante.\n"
         "/judge Anna : Donne moi le nom de quelqu'un et j'ouvrirai un sondage pour que vous puissiez le juger bien gratuitement alors qu'il n'avait rien demandé.\n"
+        "/spongebob du texte : Meme de bob l'éponge avec le texte, par exemple : \"du texte\" -> \"dU tEXtE\"\n"
         "\n"
         "Sinon je parles aussi parfois sans qu'on me le demande, mais vous verrez bien"
     )
