@@ -1,5 +1,5 @@
 """
-Spongebob.py
+spongebob_command.py
 -----------------------------
 Spongebob command for the telegram bot. Takes some string returns it with alternated case for each character, similar to the spongebob meme.
 Example : "why are you poor ? just buy a house" -> "wHy aRe yOu pOoR ? JuSt bUy a hOuSe"
