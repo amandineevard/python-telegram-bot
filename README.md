@@ -18,6 +18,7 @@ The bot is is currently able to do the following things:
 - `/okboomer` command: sends a random hot post from the *okboomer* subreddit.
 - `/reddit mildlyinteresting` command: sends a random hot post from the specified subreddit. 
 - `/judge Anna` command: creates a poll where all participants can judge the specified person. The poll is composed of 2 positives answers, 2 negatives answers and 1 unrelated answer. Multiple responses are allowed and the poll is not anonymous. 
+- `/spongebob J'aime pas le chocolat` command: return the same text but spongebobed formatted: "j'AImE pAs lE cHOcOlaT"
 
 ### Messages
 - sends a small reaction message when a user send a very long message (900+ characters). (see `message_handler/too_long_message.py`)
