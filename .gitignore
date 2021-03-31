@@ -139,3 +139,5 @@ cython_debug/
 
 #added by me
 .vscode/
+.DS_Store
+.idea/
